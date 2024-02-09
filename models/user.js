@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-//const passportLocalMongoose = require('passport-local-mongoose');
+
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -12,15 +12,12 @@ const UserSchema = new Schema({
     type: String,
     required: true,
     unique: true
+  },
+  password: {
+    type: String,
+    required: true
   }
 });
 
-// UserSchema.plugin(passportLocalMongoose, {
-//   usernameField: 'username', // Specify the field to use for username (default is 'username')
-//   usernameLowerCase: true,   // Ensure that usernames are always lowercase
-//   session: false              // Disable sessions as we're using JWTs
-// });
-
-
-const UserModel = mongoose.model('user', UserSchema);
+const UserModel = mongoose.model('User', UserSchema);
 module.exports = UserModel;
