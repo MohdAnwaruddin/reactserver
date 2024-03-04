@@ -1,10 +1,18 @@
-const User = require("../models/User");
-const config = require("../config.js");
-const jwt = require("jsonwebtoken");
-const bcrypt = require('bcrypt');
+//const User = require("../models/User");
+//const config = require("../config.js");
+//const jwt = require("jsonwebtoken");
+//const bcrypt = require('bcrypt');
+import dotenv from 'dotenv';
+dotenv.config();
 
 
-exports.login = async function (req, res) {
+const secret = process.env.JWT_SECRET;
+
+import {User}   from "../models/users.js";
+import jwt from "jsonwebtoken"
+import bcrypt from "bcrypt"
+
+const login = async function (req, res) {
   try {
     const user = await User.findOne({ username: req.body.username });
     if (!user) {
@@ -29,16 +37,19 @@ exports.login = async function (req, res) {
       expire: Math.floor(Date.now() / 1000) + (60 * 60 * 24 * 7)
     };
 
-    const token = jwt.sign(payload, config.jwtSecret);
-    console.log(config.jwtSecret);
-    res.json({ token: token });
+    const token = jwt.sign(payload,secret);
+    console.log(secret);
+
+    res.json({  user: user, token: token });
+
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
 
-exports.register = async function (req, res) {
+const register = async function (req, res) {
+  console.log("entering registration");
   try {
 
     if (!req.body.password) {
@@ -66,10 +77,17 @@ exports.register = async function (req, res) {
   }
 };
 
-exports.profile = function(req, res) {
+ const profile = function(req, res) {
   res.json({
     message: 'You made it to the HUSTLERS SHOPPING profile',
     user: req.user,
     token: req.query.secret_token
   });
 };
+
+
+export default {
+  login,
+  register,
+  profile
+}  
