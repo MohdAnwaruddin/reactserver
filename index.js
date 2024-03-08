@@ -5,18 +5,15 @@ import productRoutes from "./routes/productRoutes.js"
 import   connect   from "./mongoose.js";
 import helmet from 'helmet';
 import userRoutes from "./routes/userRoutes.js"
-
-// import userRoutes from "./routes/userRoutes.js"
 import cartRoutes from "./routes/cartRoutes.js"
+import contactRoutes from "./routes/contactRoutes.js"
+
 //import userRoutes from "./routes/userRoutes.js"
 //import User from "./models/users.js.js" 
 
-//const User = require('./models/users.js');
-//const userRoutes = require('./routes/userRoutes.js');
 
-//const accountController = require('./controllers/accountController');
 
-import accountController from "../backend/controllers/accountController.js"
+import accountController from "./controllers/user.js"
 //const config = require("./config.js");
 
 import jwt from "jsonwebtoken"
@@ -56,17 +53,15 @@ app.use(bodyParser.json());
   app.get('/profile', verifyToken, accountController.profile);
   app.post('/login', accountController.login);
   app.post('/register', accountController.register);
+  app.post('/contact', contactRoutes.contact);
+
   //app.use('/api', userRoutes);
 
 
 app.use('/products', productRoutes);
-
-app.use('/cart', cartRoutes)
-
-
 app.use('/user' , userRoutes)
-
-
+app.use('/cart', cartRoutes)
+//app.use('/api' , contactRoutes)
 
 app.listen(3001, () => { console.log('Server started.') });
 
