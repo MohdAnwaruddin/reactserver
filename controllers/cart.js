@@ -1,5 +1,5 @@
 // const productSchema = require("../models/products")
-const Cart = require("../models/cart.js")
+const Cart = require("../models/Cart")
 
 
 // import {Cart}   from "../models/cart.js";
