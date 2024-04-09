@@ -25,8 +25,8 @@ const app = express();
 app.use(
     cors(
         {
-            origin: 'https://reactserver-pink.vercel.app/' ,
-    allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept',
+            origin: 'https://reactclient2.vercel.app/' ,
+    // allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept',
         }
     )
     );
