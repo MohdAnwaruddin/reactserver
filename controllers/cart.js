@@ -1,7 +1,8 @@
 // const productSchema = require("../models/products")
+const Cart = require("../models/cart")
 
 
-import {Cart}   from "../models/cart.js";
+// import {Cart}   from "../models/cart.js";
 // import {Categories}   from "../models/Categories.js";
 
 const addProduct = async (req, res) => {

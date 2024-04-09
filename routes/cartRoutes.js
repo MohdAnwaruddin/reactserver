@@ -1,7 +1,8 @@
 
 
 import express from 'express'
-import cartController from '../controllers/cart.js'
+// import cartController from '../controllers/cart.js'
+const cartController = require("../models/cart")
 
 const router = express.Router();
 

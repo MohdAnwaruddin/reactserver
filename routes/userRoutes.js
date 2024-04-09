@@ -1,9 +1,10 @@
 
 
 
-import express from 'express'
-import {User}   from "../models/users.js";
-import bcrypt from "bcrypt"
+const express = require('express');
+const { User } = require('../models/users.js');
+const bcrypt = require('bcrypt');
+
 const router = express.Router();
 //const UserModel = require('../models/User');
  

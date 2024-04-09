@@ -1,22 +1,20 @@
-import express from "express"
-import cors from "cors";
-import bodyParser from "body-parser"
-import productRoutes from "./routes/productRoutes.js"
-import   connect   from "./mongoose.js";
-import helmet from 'helmet';
-import userRoutes from "./routes/userRoutes.js"
-import cartRoutes from "./routes/cartRoutes.js"
-import contactRoutes from "./routes/contactRoutes.js"
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const productRoutes = require("./routes/productRoutes.js");
+const connect = require("./mongoose.js");
+const helmet = require('helmet');
+const userRoutes = require("./routes/userRoutes.js");
+const cartRoutes = require("./routes/cartRoutes.js");
+const contactRoutes = require("./routes/contactRoutes.js");
 
-//import userRoutes from "./routes/userRoutes.js"
-//import User from "./models/users.js.js" 
+//const userRoutes = require("./routes/userRoutes.js");
+//const User = require("./models/users.js.js"); 
 
-
-
-import accountController from "./controllers/user.js"
+const accountController = require("./controllers/user.js");
 //const config = require("./config.js");
 
-import jwt from "jsonwebtoken"
+const jwt = require("jsonwebtoken");
 
 
 //const jwt = require('jsonwebtoken'); 

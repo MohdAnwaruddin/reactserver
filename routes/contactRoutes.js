@@ -1,5 +1,5 @@
-import {Contact}   from "../models/contact.js";
-import mongoose from "mongoose";
+const { Contact } = require('../models/contact.js');
+const mongoose = require('mongoose');
 
 const contact = async function (req, res)
 

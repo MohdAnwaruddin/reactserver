@@ -1,6 +1,7 @@
-import dotenv from 'dotenv';
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+
 dotenv.config();
-import  mongoose from 'mongoose';
 
 const uri = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}`;
 
