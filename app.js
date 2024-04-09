@@ -88,7 +88,7 @@ jwt.verify(token, config.jwtSecret, (err, decoded) => {
   next();
 });
 }
-app.listen(3001, () => { console.log('Server started.') });
+app.listen(process.env.PORT || 8000, () => { console.log('Server started.') });
 
 
 
