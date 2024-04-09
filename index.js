@@ -25,7 +25,7 @@ const app = express();
 app.use(
     cors(
         {
-            origin: 'https://reactclient2.vercel.app/' ,
+            origin: 'https://reactclient2-c9grwycl9-mohammad-anwaruddins-projects.vercel.app/' ,
     // allowedHeaders: 'Origin,X-Requested-With,Content-Type,Accept',
         }
     )
