@@ -1,7 +1,7 @@
 // const productSchema = require("../models/products")
 
 
-import {Products}   from "../models/products.js";
+import {Products}   from "../models/Products.js";
 // import {Categories}   from "../models/Categories.js";
 
 const createProduct = async (req, res) => {
