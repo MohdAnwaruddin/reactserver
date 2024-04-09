@@ -29,6 +29,6 @@ const contact = async function (req, res)
   }
 }
 
-export default {
+module.exports =  {
   contact
 }

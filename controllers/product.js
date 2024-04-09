@@ -59,7 +59,7 @@ try {
 
 }
 
-export default {
+module.exports =  {
     createProduct,
     fetchProduct,
     fetchCategories,

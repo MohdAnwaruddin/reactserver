@@ -60,7 +60,7 @@ const deleteCart = async (req, res) => {
     }
 }
 
-export default {
+module.exports =  {
     addProduct,
     fetchCart,
     deleteCart,

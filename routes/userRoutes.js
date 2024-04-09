@@ -88,4 +88,4 @@ router.delete('/users/:userId', async (req, res) => {
   }
 });
  
-export default router;
+module.exports =  router;
