@@ -31,7 +31,8 @@ app.use(helmet
       })
       );
       
-app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
     connect().then(() => {
 
