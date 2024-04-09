@@ -57,7 +57,6 @@ app.use('/user' , userRoutes)
 app.use('/cart', cartRoutes)
 //app.use('/api' , contactRoutes)
 
-app.listen(3001, () => { console.log('Server started.') });
 
 const secret = process.env.JWT_SECRET;
 
@@ -89,5 +88,7 @@ jwt.verify(token, config.jwtSecret, (err, decoded) => {
   next();
 });
 }
+app.listen(3001, () => { console.log('Server started.') });
+
 
 
