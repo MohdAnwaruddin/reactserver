@@ -1,4 +1,4 @@
-const { Contact } = require('../models/contact.js');
+const Contact  = require('../models/contact.js');
 const mongoose = require('mongoose');
 
 const contact = async function (req, res)
@@ -6,7 +6,6 @@ const contact = async function (req, res)
 //async function POST(req,res) 
 {
   const { fullname, email, message } =  req.body;
-
   try {
     //await connectDB();
     await Contact.create({ fullname, email, message });
